@@ -34,8 +34,4 @@ public class DesafioService {
         log.info("Ocorrências de caracteres contadas com sucesso.");
         return ocorrencias;
     }
-
-    public String greeting(String name) {
-        return "hello " + name;
-    }
 }

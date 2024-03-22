@@ -4,5 +4,5 @@ import io.quarkus.test.junit.QuarkusIntegrationTest;
 
 @QuarkusIntegrationTest
 class DesafioResourceIT extends DesafioResourceTest {
-    // Execute the same tests but in packaged mode.
+    //  Testes serão executados em modo empacotado.
 }
