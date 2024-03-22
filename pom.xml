@@ -75,6 +75,11 @@
 			<artifactId>quarkus-jacoco</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.quarkus.junit5</groupId>
+			<artifactId>junit5-virtual-threads</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
