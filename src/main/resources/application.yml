@@ -1,0 +1,36 @@
+quarkus:
+  application:
+    version: "1.0.0-SNAPSHOT"
+    name: "desafio-back-end"
+    
+  http:
+    root-path: "/api"
+    cors: 
+      ~: true
+      origins: "/.*/"
+  
+  native:
+    user-language: pt-BR
+    user-country: BR
+#TODO verificar    add-all-charsets: true
+
+#log
+"%dev":
+  quarkus:
+    log:
+      level: DEBUG
+"%test":
+  quarkus:
+    log:
+      level: INFO
+"%homol": 
+  quarkus: 
+    log:
+      level: WARN
+"%prod":
+  quarkus: 
+    log:
+      level: ERROR
+
+greeting:
+  message: "hello"
