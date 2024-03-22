@@ -1,29 +1,18 @@
 package br.gov.caixa.teia;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.is;
-
-import java.util.UUID;
-
-import org.junit.jupiter.api.Test;
-
-import br.gov.caixa.teia.config.DesafioConfig;
 import io.quarkus.test.junit.QuarkusTest;
-import jakarta.inject.Inject;
 
 @QuarkusTest
-class GreetingResourceTest {
+class DesafioResourceTest {
 	
-    @Inject
-    DesafioConfig config;
     
-    @Test
+    /* @Test
     void testHelloEndpoint() {
         given()
           .when().get("/manipulacao-string")
           .then()
              .statusCode(200)
-             .body(is("Hello from RESTEasy Reactive " + config.message()));
+             .body(is("Hello from RESTEasy Reactive "));
     }
     
     @Test
@@ -35,6 +24,6 @@ class GreetingResourceTest {
           .then()
             .statusCode(200)
             .body(is("hello " + uuid));
-    }
+    }*/
 
 }

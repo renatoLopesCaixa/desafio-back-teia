@@ -2,17 +2,16 @@ quarkus:
   application:
     version: "1.0.0-SNAPSHOT"
     name: "desafio-back-end"
-    
+  
   http:
     root-path: "/api"
-    cors: 
+    cors:
       ~: true
       origins: "/.*/"
   
   native:
     user-language: pt-BR
     user-country: BR
-#TODO verificar    add-all-charsets: true
 
 #log
 "%dev":
@@ -23,12 +22,12 @@ quarkus:
   quarkus:
     log:
       level: INFO
-"%homol": 
-  quarkus: 
+"%homol":
+  quarkus:
     log:
       level: WARN
 "%prod":
-  quarkus: 
+  quarkus:
     log:
       level: ERROR
 
