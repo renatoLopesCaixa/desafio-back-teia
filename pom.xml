@@ -76,6 +76,10 @@
 			<artifactId>junit5-virtual-threads</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-cache</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

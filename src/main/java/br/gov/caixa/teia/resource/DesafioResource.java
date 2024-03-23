@@ -13,6 +13,7 @@ import org.jboss.resteasy.reactive.RestResponse;
 import br.gov.caixa.teia.dto.DesafioRequestDto;
 import br.gov.caixa.teia.dto.DesafioResponseDto;
 import br.gov.caixa.teia.service.DesafioService;
+import io.quarkus.cache.CacheResult;
 import io.smallrye.common.annotation.RunOnVirtualThread;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.POST;
@@ -29,6 +30,7 @@ public class DesafioResource {
 
 	@POST
 	@RunOnVirtualThread
+	@CacheResult(cacheName = "desafio-cache") 
 	@Operation(summary = "Manipular String", description = "Verifica se a string é um palíndromo e conta o número de ocorrências de cada caractere.")
 	@APIResponse(responseCode = "200", description = "Operação bem-sucedida", content = @Content(mediaType = "application/json", schema = @Schema(implementation = DesafioResponseDto.class)))
 	@APIResponse(responseCode = "400", description = "Solicitação inválida")
