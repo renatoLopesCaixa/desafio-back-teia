@@ -36,6 +36,9 @@ public class DesafioResource {
 	public RestResponse<DesafioResponseDto> manipularString(@RequestBody(required = true) DesafioRequestDto request) {
 		String texto = request.getTexto();
 		log.info("Recebida solicitação para manipular a string: " + texto);
+		
+		//Verifica se a string foi passada no Request body
+		service.validaBody(texto);
 
 		// Verifica se a string é um palíndromo
 		boolean palindromo = service.verificarPalindromo(texto);

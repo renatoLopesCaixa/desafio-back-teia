@@ -14,6 +14,6 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 @RegisterForReflection 
 public class DesafioRequestDto {
-	@Schema(description = "Texto a ser manipulado", example = "banana")
+	@Schema(description = "Texto a ser manipulado", example = "banana", required = true)
 	private String texto;
 }
