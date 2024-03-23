@@ -12,6 +12,22 @@ quarkus:
   native:
     user-language: pt-BR
     user-country: BR
+    
+  smallrye-openapi:
+    path: "/api/swagger"
+    info-title: Desafio Back-end API
+    info-version: 1.0.0
+    info-description: Desafio proposto aos desenvolvedores back-end para ingresso na TEIA.
+    info-contact-email: renato.f.lopes@caixa.gov.br
+    info-contact-name: Renato Ferreira da Silva Lopes
+    info-contact-url: https://github.com/renatoLopesCaixa
+    info-license-name: MIT License
+    info-license-url: https://www.mit.edu/~amini/LICENSE.md
+
+#para o desafio deixei o swagger-ui habilitado em prod    
+  swagger-ui:
+    always-include: true
+    path: "/api/swagger-ui"
 
 #log
 "%dev":
