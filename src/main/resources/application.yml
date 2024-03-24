@@ -1,4 +1,6 @@
 quarkus:
+  default-locale: pt_BR
+
   application:
     version: "1.0.0-SNAPSHOT"
     name: "desafio-back-end"
@@ -8,10 +10,6 @@ quarkus:
     cors:
       ~: true
       origins: "/.*/"
-  
-  native:
-    user-language: pt-BR
-    user-country: BR
     
   smallrye-openapi:
     path: "/api/swagger"
