@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DesafioService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">DesafioRequestDtoTest (QuarkusTest)</a> &gt; <a href="index.source.html" class="el_package">br.gov.caixa.teia.service</a> &gt; <span class="el_source">DesafioService.java</span></div><h1>DesafioService.java</h1><pre class="source lang-java linenums">package br.gov.caixa.teia.service;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import org.jboss.logging.Logger;
+
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.BadRequestException;
+
+@ApplicationScoped
+<span class="fc" id="L13">public class DesafioService {</span>
+
+	@Inject
+	Logger log;
+
+	public void validaBody(String texto) {
+<span class="fc bfc" id="L19" title="All 2 branches covered.">		if (texto == null) {</span>
+<span class="fc" id="L20">			throw new BadRequestException(&quot;Texto não pode ser nulo&quot;);</span>
+		}
+<span class="fc" id="L22">	}</span>
+
+	public boolean verificarPalindromo(String texto) {
+<span class="fc" id="L25">		log.info(&quot;Verificando se a string é um palíndromo: &quot; + texto);</span>
+<span class="fc" id="L26">		String textoLimpo = texto.replaceAll(&quot;\\s+&quot;, &quot;&quot;).toLowerCase();</span>
+<span class="fc" id="L27">		StringBuilder plain = new StringBuilder(textoLimpo);</span>
+<span class="fc" id="L28">		StringBuilder reverse = plain.reverse();</span>
+<span class="fc" id="L29">		boolean isPalindromo = (reverse.toString()).equals(textoLimpo);</span>
+<span class="fc" id="L30">		log.info(&quot;É um palíndromo: &quot; + isPalindromo);</span>
+<span class="fc" id="L31">		return isPalindromo;</span>
+	}
+
+	public Map&lt;Character, Integer&gt; contarOcorrencias(String texto) {
+<span class="fc" id="L35">		log.info(&quot;Contando ocorrências de caracteres na string: &quot; + texto);</span>
+<span class="fc" id="L36">		Map&lt;Character, Integer&gt; ocorrencias = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">		for (char caractere : texto.toCharArray()) {</span>
+<span class="fc" id="L38">			ocorrencias.put(caractere, ocorrencias.getOrDefault(caractere, 0) + 1);</span>
+		}
+<span class="fc" id="L40">		log.info(&quot;Ocorrências de caracteres contadas com sucesso.&quot;);</span>
+<span class="fc" id="L41">		return ocorrencias;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
