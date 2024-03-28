@@ -47,6 +47,3 @@ quarkus:
   quarkus:
     log:
       level: ERROR
-
-greeting:
-  message: "hello"
