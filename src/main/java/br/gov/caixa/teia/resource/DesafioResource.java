@@ -22,15 +22,18 @@ import jakarta.ws.rs.Path;
 @Path("/manipulacao-string")
 public class DesafioResource {
 
-	@Inject
-	Logger log;
+	private final Logger log;
+	private final DesafioService service;
 
 	@Inject
-	DesafioService service;
+	public DesafioResource(DesafioService service, Logger log) {
+		this.service = service;
+		this.log = log;
+	}
 
 	@POST
 	@RunOnVirtualThread
-	@CacheResult(cacheName = "desafio-cache") 
+	@CacheResult(cacheName = "desafio-cache")
 	@Operation(summary = "Manipular String", description = "Verifica se a string é um palíndromo e conta o número de ocorrências de cada caractere.")
 	@APIResponse(responseCode = "200", description = "Operação bem-sucedida", content = @Content(mediaType = "application/json", schema = @Schema(implementation = DesafioResponseDto.class)))
 	@APIResponse(responseCode = "400", description = "Solicitação inválida")
@@ -38,8 +41,8 @@ public class DesafioResource {
 	public RestResponse<DesafioResponseDto> manipularString(@RequestBody(required = true) DesafioRequestDto request) {
 		String texto = request.getTexto();
 		log.info("Recebida solicitação para manipular a string: " + texto);
-		
-		//Verifica se a string foi passada no Request body
+
+		// Verifica se a string foi passada no Request body
 		service.validaBody(texto);
 
 		// Verifica se a string é um palíndromo

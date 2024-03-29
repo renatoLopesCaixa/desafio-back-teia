@@ -12,8 +12,12 @@ import jakarta.ws.rs.BadRequestException;
 @ApplicationScoped
 public class DesafioService {
 
+	private final Logger log;
+	
 	@Inject
-	Logger log;
+	public DesafioService(Logger log) {
+		this.log = log;
+	}
 
 	public void validaBody(String texto) {
 		if (texto == null) {
