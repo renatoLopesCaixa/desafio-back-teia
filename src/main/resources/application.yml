@@ -21,9 +21,6 @@ quarkus:
     info-contact-url: https://github.com/renatoLopesCaixa
     info-license-name: MIT License
     info-license-url: https://www.mit.edu/~amini/LICENSE.md
-    
-  jacoco:
-    report-location: src/test/jacoco-report
 
 #para o desafio deixei o swagger-ui habilitado em prod    
   swagger-ui:
