@@ -2,6 +2,7 @@ package br.gov.caixa.teia.service;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import org.jboss.logging.Logger;
 
@@ -20,7 +21,7 @@ public class DesafioService {
 	}
 
 	public void validaBody(String texto) {
-		if (texto == null) {
+		if (Objects.isNull(texto)) {
 			throw new BadRequestException("Texto não pode ser nulo");
 		}
 	}
